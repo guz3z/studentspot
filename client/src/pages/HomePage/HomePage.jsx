@@ -18,14 +18,22 @@ export function HomePage() {
                     </ul>
                 </nav>
             </div>
+
             
             <div className="homepage-bg">
+            <div className='intro-cont'>
+                <h1>Welcome to</h1>
+                <h2>StudentSpot</h2>
+                <p>A DYNAMIC STUDENT ENGAGEMENT EXPERIENCE</p>
+            </div>
+                
                 <div className="hp-cube"></div>
                 <div className="hp-cube"></div>
                 <div className="hp-cube"></div>
                 <div className="hp-cube"></div>
                 <div className="hp-cube"></div>
             </div>
+            
         </div>
         
     )
