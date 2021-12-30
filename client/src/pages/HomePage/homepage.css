@@ -147,3 +147,15 @@
     font-size: 1.3rem;
     margin: 0 auto;
 }
+
+/*sectionJoin*/
+.hp-join-cont{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFF;
+}
+
+#Join{
+    color: rgb(77, 252, 77);
+    font-weight: 900;
+}
