@@ -17,66 +17,68 @@ export function Auth() {
 
     return (
         <div className='auth-form-cont'>
-            <div className="auth-form-cont-fields">
-                <div className="auth-form-cont-fields-content">
-                    <p>{ isSignUp ? 'Register' : 'Log in'}</p>
-                    <form action="" onSubmit={() => {}}>
-                        { isSignUp && (
+            <div className='auth-form-wrapper'>
+                <div className="auth-form-cont-fields">
+                    <div className="auth-form-cont-fields-content">
+                        <p className='register-text'>{ isSignUp ? 'Register' : 'Log in'}</p>
+                        <form action="" onSubmit={() => {}}>
+                            { isSignUp && (
+                                <div className="auth-form-cont-fields-cont-input">
+                                    <label htmlFor="fullName">Full Name</label>
+                                    <input 
+                                        type="text"
+                                        name='fullName'
+                                        placeholder='Full name'
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            )}
                             <div className="auth-form-cont-fields-cont-input">
-                                <label htmlFor="fullName">Full Name</label>
+                                <label htmlFor="email">Email</label>
                                 <input 
                                     type="text"
-                                    name='fullName'
-                                    placeholder='Full name'
+                                    name='email'
+                                    placeholder='Email'
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
-                        )}
-                        <div className="auth-form-cont-fields-cont-input">
-                            <label htmlFor="email">Email</label>
-                            <input 
-                                type="text"
-                                name='email'
-                                placeholder='Email'
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className="auth-form-cont-fields-cont-input">
-                            <label htmlFor="password">Password</label>
-                            <input 
-                                type="password"
-                                name='password'
-                                placeholder='Password'
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        { isSignUp && (
                             <div className="auth-form-cont-fields-cont-input">
-                                <label htmlFor="confirmPassword">Confirm Password</label>
+                                <label htmlFor="password">Password</label>
                                 <input 
                                     type="password"
-                                    name='confirmPassword'
-                                    placeholder='Confirm Password'
+                                    name='password'
+                                    placeholder='Password'
                                     onChange={handleChange}
                                     required
                                 />
                             </div>
-                        )}
-                    </form>
-                    <div className="auth-form-cont-account">
-                        <p>
-                            { isSignUp ? 'Already have an account?' : 'Join us!' }
-                            <span onClick={switchMode}>
-                                { isSignUp ? 'Log in' : 'Register' }
-                            </span>
-                        </p>
+                            { isSignUp && (
+                                <div className="auth-form-cont-fields-cont-input">
+                                    <label htmlFor="confirmPassword">Confirm Password</label>
+                                    <input 
+                                        type="password"
+                                        name='confirmPassword'
+                                        placeholder='Confirm Password'
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                            )}
+                        </form>
+                        <div className="auth-form-cont-account">
+                            <p>
+                                { isSignUp ? 'Already have an account?' : 'Join us!' }
+                                <span className='span-sign-text' onClick={switchMode}>
+                                    { isSignUp ? ' Log in' : ' Register' }
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
+                
             </div>
-            
         </div>
     )
 }
