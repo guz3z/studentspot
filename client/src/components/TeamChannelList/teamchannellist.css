@@ -1,0 +1,17 @@
+.team-chan-list{
+    width: 80%;
+}
+
+.team-chan-list-msg{
+    margin-top: 20px;
+    width: 100%;
+    overflow: inherit;
+    font-size: 0.5rem;
+}
+
+.team-chan-list-msg-loading{
+    margin-top: 20px;
+    width: 100%;
+    overflow: inherit;
+    font-size: 0.5rem;
+}

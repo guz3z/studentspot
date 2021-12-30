@@ -9,7 +9,7 @@ export function CLCSidebar() {
                     <i className="fas fa-home"></i>
                 </div>
                 <div className="clcsb-icon">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i className="fas fa-sign-out-alt"></i>
                 </div>
             </div>
             
