@@ -1,0 +1,26 @@
+.clcsb-cont{
+    height: 100%;
+    width: 80px;
+    background-color: #4393cc;
+    box-shadow: 1px 1px 4px #14344e;
+};
+
+.clcsb-icon-cont{
+    display: block;
+}
+
+.fas{
+    font-size: 2rem;
+    color: white;
+}
+
+.fas:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.clcsb-icon{
+    text-align: center;
+    padding-top: 20px;
+
+}

@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { ChannelCont, ChannelListCont  } from '../../components/index';
+import './chatroom.css';
 
 export function ChatRoom() {
     return (
-        <div>
-            <h1>Chatroom</h1>
+        <div className='chatroom-cont'>
+            <div className="cr-wrapper">
+                <ChannelListCont />
+                <ChannelCont />
+                
+            </div>
+            
             
         </div>
     )

@@ -4,7 +4,7 @@ import './channelcont.css';
 export function ChannelCont() {
     return (
         <div>
-            
+            cc
         </div>
     )
 }
