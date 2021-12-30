@@ -1,0 +1,30 @@
+.csearch-cont{
+    padding-top: 20px;
+}
+
+.csearch-input-cont{
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 4px #14344e;
+
+}
+.fa-search{
+    font-size: 0.8rem;
+    margin-top: 9px;
+    margin-left: 5px;
+}
+
+.csearch-input-bx{
+    background-color: transparent;
+    color: white;
+    border-style: none;
+    outline: none;
+    padding: 0 5px;
+}
+
+.csearch-input-bx::placeholder{
+    color: rgba(255, 255, 255, 0.822);
+}
