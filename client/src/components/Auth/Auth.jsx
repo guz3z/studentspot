@@ -4,6 +4,8 @@ import axios from 'axios'
 import './auth.css'
 
 
+const cookies = new Cookies();
+
 const initialState = {
     fullName: '',
     email: '',
@@ -27,9 +29,26 @@ export function Auth() {
 
     }
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault();
-        
+
+        const { fullName, email, password } = form;
+        const URL = 'http://localhost:5000/auth';
+
+        const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login'}`, {
+            email, password, fullName
+        });
+
+        cookies.set('token', token);
+        cookies.set('email', email);
+        cookies.set('fullName', fullName);
+        cookies.set('userId', userId);
+
+        if(isSignUp) {
+            cookies.set('hashedPassword', hashedPassword);
+        }
+
+        window.location.reload();
     }
 
 
