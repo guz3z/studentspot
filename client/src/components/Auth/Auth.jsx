@@ -3,15 +3,34 @@ import Cookies from 'universal-cookie';
 import axios from 'axios'
 import './auth.css'
 
+
+const initialState = {
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+}
+
 export function Auth() {
 
-    const [ isSignUp, setIsSignUp ] = useState(true);
+
+    const [ form, setForm ] = useState(initialState);
+    const [ isSignUp, setIsSignUp ] = useState(false);
 
     function switchMode(){
         setIsSignUp((prevValue) => !prevValue )
     }
 
-    function handleChange(){}
+    function handleChange(e){
+        e.preventDefault();
+        setForm({ ... form, [e.target.name]: e.target.value});
+
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        
+    }
 
 
 
@@ -21,7 +40,7 @@ export function Auth() {
                 <div className="auth-form-cont-fields">
                     <div className="auth-form-cont-fields-content">
                         <p className='register-text'>{ isSignUp ? 'Register' : 'Log in'}</p>
-                        <form action="" onSubmit={() => {}}>
+                        <form action="" onSubmit={handleSubmit}>
                             { isSignUp && (
                                 <div className="auth-form-cont-fields-cont-input">
                                     <label htmlFor="fullName">Full Name</label>
@@ -66,6 +85,9 @@ export function Auth() {
                                     />
                                 </div>
                             )}
+                            <div className="auth-form-cont-btn">
+                                <button>{ isSignUp ? 'Register' : 'Log in'}</button>
+                            </div>
                         </form>
                         <div className="auth-form-cont-account">
                             <p>

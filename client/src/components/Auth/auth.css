@@ -7,7 +7,7 @@
     background-color: #4393cc;
     position: relative;
     margin: auto;
-    top: 20%;
+    top: 10%;
     width: 30%;
     height: auto;
     border-radius: 20px;
@@ -61,10 +61,35 @@
 
 .span-sign-text{
     cursor: pointer;
+    color: #14344e;
+    font-weight: 900;
 }
 
 .span-sign-text:hover{
     transform: scale(1.2);
     color: rgb(77, 252, 77);
     font-weight: 900;
+}
+
+.auth-form-cont-btn{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-form-cont-btn button{
+    width: 100px;
+    height: 30px;
+    background-color: #005ca8;
+    color: white;
+    border-radius: 10px;
+    border-style: none;
+    box-shadow: 1px 1px 4px #14344e;
+}
+
+.auth-form-cont-btn button:hover{
+   cursor: pointer;
+   background-color: white;
+   color:#14344e;
+   transform: scale(1.1);
 }
