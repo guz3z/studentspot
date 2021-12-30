@@ -1,9 +1,12 @@
 import React from 'react';
-import { Auth } from '../../components/index'
-import './homepage.css'
+import Cookies from 'universal-cookie';
+import { Auth } from '../../components/index';
+import './homepage.css';
 
 
 export function HomePage() {
+
+
     return (
        <>
 
@@ -36,7 +39,7 @@ export function HomePage() {
                 </div>
                 
             </div>
-
+            
             <div id="sectionJoin" className='hp-join-cont'>
                 <Auth />
 

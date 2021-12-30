@@ -3,15 +3,53 @@ import Cookies from 'universal-cookie';
 import axios from 'axios'
 import './auth.css'
 
+
+const cookies = new Cookies();
+
+const initialState = {
+    fullName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+}
+
 export function Auth() {
 
-    const [ isSignUp, setIsSignUp ] = useState(true);
+
+    const [ form, setForm ] = useState(initialState);
+    const [ isSignUp, setIsSignUp ] = useState(false);
 
     function switchMode(){
         setIsSignUp((prevValue) => !prevValue )
     }
 
-    function handleChange(){}
+    function handleChange(e){
+        e.preventDefault();
+        setForm({ ... form, [e.target.name]: e.target.value});
+
+    }
+
+    async function handleSubmit(e){
+        e.preventDefault();
+
+        const { fullName, email, password } = form;
+        const URL = 'http://localhost:5000/auth';
+
+        const { data: { token, userId, hashedPassword } } = await axios.post(`${URL}/${isSignUp ? 'signup' : 'login'}`, {
+            email, password, fullName
+        });
+
+        cookies.set('token', token);
+        cookies.set('email', email);
+        cookies.set('fullName', fullName);
+        cookies.set('userId', userId);
+
+        if(isSignUp) {
+            cookies.set('hashedPassword', hashedPassword);
+        }
+
+        window.location.reload();
+    }
 
 
 
@@ -21,7 +59,7 @@ export function Auth() {
                 <div className="auth-form-cont-fields">
                     <div className="auth-form-cont-fields-content">
                         <p className='register-text'>{ isSignUp ? 'Register' : 'Log in'}</p>
-                        <form action="" onSubmit={() => {}}>
+                        <form action="" onSubmit={handleSubmit}>
                             { isSignUp && (
                                 <div className="auth-form-cont-fields-cont-input">
                                     <label htmlFor="fullName">Full Name</label>
@@ -66,6 +104,9 @@ export function Auth() {
                                     />
                                 </div>
                             )}
+                            <div className="auth-form-cont-btn">
+                                <button>{ isSignUp ? 'Register' : 'Log in'}</button>
+                            </div>
                         </form>
                         <div className="auth-form-cont-account">
                             <p>
