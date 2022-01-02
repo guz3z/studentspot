@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
-import { HomePage, ChatRoom } from './pages';
+import { HomePage, ChatRoom, MainFeed } from './pages';
 import './style.css';
 
 const cookies = new Cookies();
@@ -25,9 +25,6 @@ if(authToken) {
 function App() {
 
     if(!authToken) return <HomePage />
-
-
-
     return (
         <div className='app-cont'>
 
@@ -37,6 +34,7 @@ function App() {
                         <ChatRoom />
                     </Chat>
                 </Route>
+                <Route path='/mainfeed'><MainFeed /></Route>
                 
             </Switch>
             
