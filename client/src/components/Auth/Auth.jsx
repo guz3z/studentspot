@@ -48,7 +48,7 @@ export function Auth() {
             cookies.set('hashedPassword', hashedPassword);
         }
 
-        window.location.reload();
+        window.location.href = 'http://localhost:3000/mainfeed';
     }
 
 
