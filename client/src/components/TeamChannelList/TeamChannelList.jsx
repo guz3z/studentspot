@@ -5,7 +5,7 @@ export function TeamChannelList({ children, error = false, loading, type }) {
 
     if(error) {
         return type === 'team' ? (
-            <div className="team-chan-list">
+            <div className="team-chan-list-cont">
                 <p className="team-chan-list-msg">Connection error, please wait a moment and try again</p>
             </div>
         ) : null
@@ -13,8 +13,8 @@ export function TeamChannelList({ children, error = false, loading, type }) {
 
     if(loading) { 
         return (
-            <div className="team-chan-list">
-                <p className="team-chan-list-msg-loading">
+            <div className="team-chan-list-cont">
+                <p className="team-chan-list-msg">
                     { type === 'team' ? 'Channels' : ' Messages' } loading...
                 </p>
             </div>
@@ -25,7 +25,7 @@ export function TeamChannelList({ children, error = false, loading, type }) {
     return (
         <div className='team-chan-list-cont'>
             <div className="team-chan-list-header">
-                <p className="team-chan-list-head-title">
+                <p>
                     { type === 'team' ? 'Channels' : 'Direct Messages' }
                 </p>
                 {/*button to add channel*/}

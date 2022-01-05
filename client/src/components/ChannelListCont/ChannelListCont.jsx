@@ -25,8 +25,8 @@ export function ChannelListCont() {
                             {... previewProps}
                             type='team'
                         />
-                    )}  
-                />
+                    )} 
+                    />
                 <ChannelList 
                     filters={{}}
                     channelRenderFilterFn={() => {}}

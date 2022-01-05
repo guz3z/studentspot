@@ -5,3 +5,8 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+
+.chat-css{
+    max-height: 100vh;
+    background-color: black;
+}
