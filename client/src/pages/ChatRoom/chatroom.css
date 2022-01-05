@@ -1,10 +1,12 @@
 .chatroom-cont{
     padding: 0;
     margin: 0;
+    width: 100vw;
+    height: 100vh;
+
 }
 
 .cr-wrapper{
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
 }
