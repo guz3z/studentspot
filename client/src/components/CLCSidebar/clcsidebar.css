@@ -1,6 +1,7 @@
 .clcsb-cont{
     height: 100%;
     width: 8vw;
+    max-width: 22vw;
     background-color: #2879cfda;
     box-shadow: 1px 1px 4px #14344e;
 };
