@@ -1,8 +1,8 @@
 .clc-cont{
     display: flex;
-    height: 100vh;
+    max-height: 100vh;
     background-color: #4393cc;
-    width: 22vw;
+    width: 23vw;
     max-width: 22vw;
     box-shadow: 1px 1px 4px #14344e;
     
@@ -10,6 +10,9 @@
 
 .cl-header{
     margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 .cl-header p{
     color: white;

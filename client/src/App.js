@@ -30,7 +30,7 @@ function App() {
 
             <Switch>
                 <Route path='/chatroom'>
-                    <Chat client={client} theme='team light'>
+                    <Chat client={client} theme='teamlight'>
                         <ChatRoom />
                     </Chat>
                 </Route>

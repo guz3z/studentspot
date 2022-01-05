@@ -1,21 +1,14 @@
-.team-chan-list{
-    width: 80%;
-}
 
-.team-chan-list-msg{
-    margin-top: 20px;
+.team-chan-list-cont{
+
     width: 100%;
-    overflow: inherit;
-    font-size: 0.5rem;
+    overflow: hidden;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.team-chan-list-msg-loading{
-    margin-top: 20px;
-    width: 100%;
-    overflow: inherit;
-    font-size: 0.5rem;
-}
-
-.team-chan-list-head-title{
-    margin: 20px 0;
+.team-chan-list-header, .team-chan-list-msg{
+    font-size: 1rem;
+    overflow: hidden;
 }
