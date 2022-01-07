@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageList, MessageInput, Thread, Window, useChannelActionContext, Avatar, useChannelStateContext, useChatContext } from 'stream-chat-react';
 import './channelinner.css';
+import { ChannelInfo } from '../../assets/ChannelInfo';
 
 export const GiphyContext = React.createContext({});
 
@@ -39,7 +40,7 @@ export function ChannelInner( { setIsEditing } ) {
                 <Thread />
             </div>
         </GiphyContext.Provider>
-    )
+    );
 };
 
 const TeamChannelHeader = ({ setIsEditing }) => {
@@ -52,25 +53,25 @@ const TeamChannelHeader = ({ setIsEditing }) => {
 
         if ( channel.type === 'messaging') {
             return (
-                <div className="team-channel-header-cont">
+                <div className="team-channel-header-name-wrapper">
                     {members.map(({ user }, i ) => (
-                        <div key={i} className='team-channel-header-name'>
+                        <div key={i} className='team-channel-header-name-multi'>
                             <Avatar name={user.fullName || user.id} size={32} />
-                            <p className="team-channel-name-user">{user.fullName || user.id}</p>
+                            <p className="team-channel-header-name-user">{user.fullName || user.id}</p>
                         </div>
                     ))}
 
-                    {additionalMembers > 0 && <p className='team-channel-name-user'>and {additionalMembers}</p>}
+                    {additionalMembers > 0 && <p className='team-channel-header-name-user'>and {additionalMembers}</p>}
                         
                 </div>
             );
         }
 
         return(
-            <div className="team-channel-wrapper">
-                <p className="team-channel-header-name"># {channel.data.name}</p>
-                <span style={{display: 'flex'}} onClick={() => setIsEditing(true)}>
-                    <i className="fas fa-info-circle"></i>
+            <div className="team-channel-header-channel-wrapper">
+                <p style={{fontWeight: '800', marginRight: '8px'}}># {channel.data.name}</p>
+                <span style={{cursor: 'pointer'}} onClick={() => setIsEditing(true)}>
+                    <ChannelInfo />
                 </span>
             </div>
         );
@@ -83,7 +84,18 @@ const TeamChannelHeader = ({ setIsEditing }) => {
     };
 
     return (
-        <div className="team-channel-cont-wrap">
+        <div className="team-channel-header-container"
+            style={{
+                display: 'flex',
+                position: 'relative',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '0 20px',
+                zIndex: '1',
+                borderBottom: '1px solid #2879cf85'
+            }}
+        
+        >
             <MessagingHeader />
             <div className="team-channel-header-right">
                 <p className="team-channel-header-right-text">{getWatcherText(watcher_count)}</p>

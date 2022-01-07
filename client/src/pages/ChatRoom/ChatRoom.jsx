@@ -18,12 +18,12 @@ export function ChatRoom() {
                     setCreateType={setCreateType}
                     setIsEditing={setIsEditing}
                 />
-                {/*<ChannelCont 
+                <ChannelCont 
                     isCreating={isCreating} 
                     setIsCreating={setIsCreating}
                     setCreateType={setCreateType}
                     setIsEditing={setIsEditing}
-                />*/}
+                />
                 
             </div>
             
