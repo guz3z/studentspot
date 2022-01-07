@@ -1,10 +1,12 @@
-.team-channel-header-name-wrapper{
+/* .team-channel-header-name-wrapper{
     flex: 3;
     display: flex;
     align-items: center;
     overflow-x: auto;
     max-width: 71vw;
     white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 };
 
 .team-channel-header-name-multi{
@@ -19,17 +21,10 @@
     text-align:center;
 };
 
-.team-channel-header-channel-wrapper{
-    display: flex;
-    align-items: center;
-};
 
-.team-channel-header-name{
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: black;
-    margin-right: 8px;
-};
+
+
+
 
 .team-channel-header-container{
     position: relative;
@@ -56,4 +51,12 @@
     font-size: 1.1rem;
     color: grey;
 }
+ */
 
+
+.team-channel-header-channel-wrapper{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+};

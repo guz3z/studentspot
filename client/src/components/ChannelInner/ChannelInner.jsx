@@ -68,8 +68,18 @@ const TeamChannelHeader = ({ setIsEditing }) => {
 
         return(
             <div className="team-channel-header-channel-wrapper">
-                <p className="team-channel-header-name"># {channel.data.name}</p>
-                <span className='channel-inner-edit-team' onClick={() => setIsEditing(true)}>
+                <p style={{fontWeight: '800', marginRight: '8px'}}># {channel.data.name}</p>
+                <span 
+                    style={{
+                        color: 'grey', 
+                        cursor: 'pointer', 
+                        border: '1px solid grey', 
+                        width: '14px',
+                        textAlign: 'center',
+                        borderRadius: '5px',
+                        fontSize: '11px'
+                    }} 
+                    onClick={() => setIsEditing(true)}>
                     i
                 </span>
             </div>
@@ -83,7 +93,18 @@ const TeamChannelHeader = ({ setIsEditing }) => {
     };
 
     return (
-        <div className="team-channel-header-container">
+        <div className="team-channel-header-container"
+            style={{
+                display: 'flex',
+                position: 'relative',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '0 20px',
+                zIndex: '1',
+                borderBottom: '1px solid #2879cf85'
+            }}
+        
+        >
             <MessagingHeader />
             <div className="team-channel-header-right">
                 <p className="team-channel-header-right-text">{getWatcherText(watcher_count)}</p>

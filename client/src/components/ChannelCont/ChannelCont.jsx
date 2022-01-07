@@ -31,7 +31,10 @@ export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditin
 
     const EmptyState = () => (
         <div className='channel-cont-empty-cont'>
-            <p className="channel-empty-first">This is the beginning of your chat history</p>
+            <p style={{
+                color: 'red',
+                fontSize: '3rem'
+            }}>This is the beginning of your chat history</p>
             <p className="channel-empty-second">Send messages, attachments, links, emojis, and more</p>
         </div>
     ) 
