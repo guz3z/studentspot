@@ -1,7 +1,6 @@
 import React from 'react';
 import { Channel, MessageTeam } from 'stream-chat-react';
 import { ChannelInner, CreateChannel, EditChannel} from '../index'
-
 import './channelcont.css';
 
 export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditing, createType} ) {
@@ -9,7 +8,7 @@ export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditin
     
     if( isCreating ) {
         return (
-            <div className='channel-cont-creating'>
+            <div className='channel-container'>
                 <CreateChannel 
                     createType={createType}
                     setIsCreating={setIsCreating}
@@ -20,7 +19,7 @@ export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditin
 
     if( isEditing ) {
         return (
-            <div className='channel-cont-editing'>
+            <div className='channel-container'>
                 <EditChannel 
                     setIsEditing={setIsEditing}
                 />

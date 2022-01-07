@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageList, MessageInput, Thread, Window, useChannelActionContext, Avatar, useChannelStateContext, useChatContext } from 'stream-chat-react';
 import './channelinner.css';
+import { ChannelInfo } from '../../assets/ChannelInfo';
 
 export const GiphyContext = React.createContext({});
 
@@ -69,18 +70,8 @@ const TeamChannelHeader = ({ setIsEditing }) => {
         return(
             <div className="team-channel-header-channel-wrapper">
                 <p style={{fontWeight: '800', marginRight: '8px'}}># {channel.data.name}</p>
-                <span 
-                    style={{
-                        color: 'grey', 
-                        cursor: 'pointer', 
-                        border: '1px solid grey', 
-                        width: '14px',
-                        textAlign: 'center',
-                        borderRadius: '5px',
-                        fontSize: '11px'
-                    }} 
-                    onClick={() => setIsEditing(true)}>
-                    i
+                <span style={{cursor: 'pointer'}} onClick={() => setIsEditing(true)}>
+                    <ChannelInfo />
                 </span>
             </div>
         );
