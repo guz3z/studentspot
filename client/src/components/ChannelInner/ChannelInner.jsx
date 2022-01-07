@@ -52,25 +52,25 @@ const TeamChannelHeader = ({ setIsEditing }) => {
 
         if ( channel.type === 'messaging') {
             return (
-                <div className="team-channel-header-cont">
+                <div className="team-channel-header-name-wrapper">
                     {members.map(({ user }, i ) => (
-                        <div key={i} className='team-channel-header-name'>
+                        <div key={i} className='team-channel-header-name-multi'>
                             <Avatar name={user.fullName || user.id} size={32} />
-                            <p className="team-channel-name-user">{user.fullName || user.id}</p>
+                            <p className="team-channel-header-name-user">{user.fullName || user.id}</p>
                         </div>
                     ))}
 
-                    {additionalMembers > 0 && <p className='team-channel-name-user'>and {additionalMembers}</p>}
+                    {additionalMembers > 0 && <p className='team-channel-header-name-user'>and {additionalMembers}</p>}
                         
                 </div>
             );
         }
 
         return(
-            <div className="team-channel-wrapper">
+            <div className="team-channel-header-channel-wrapper">
                 <p className="team-channel-header-name"># {channel.data.name}</p>
-                <span style={{display: 'flex'}} onClick={() => setIsEditing(true)}>
-                    <i className="fas fa-info-circle"></i>
+                <span className='channel-inner-edit-team' onClick={() => setIsEditing(true)}>
+                    i
                 </span>
             </div>
         );
@@ -83,7 +83,7 @@ const TeamChannelHeader = ({ setIsEditing }) => {
     };
 
     return (
-        <div className="team-channel-cont-wrap">
+        <div className="team-channel-header-container">
             <MessagingHeader />
             <div className="team-channel-header-right">
                 <p className="team-channel-header-right-text">{getWatcherText(watcher_count)}</p>
