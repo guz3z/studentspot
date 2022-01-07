@@ -4,7 +4,7 @@ import { CLCSidebar, ChannelSearch, TeamChannelList, TeamChannelPreview } from '
 import Cookies from 'universal-cookie';
 import './channellistcont.css'
 
-export function ChannelListCont() {
+export function ChannelListCont({ isCreating, setIsCreating, setCreateType, setIsEditing}) {
     return (
         <div className='clc-cont'>
             <CLCSidebar />
@@ -18,6 +18,10 @@ export function ChannelListCont() {
                         <TeamChannelList 
                             {... listProps}
                             type='team'
+                            isCreating={isCreating}
+                            setIsCreating={setIsCreating}
+                            setCreateType={setCreateType}
+                            setIsEditing={setIsEditing}
                         />
                     )}
                     Preview={(previewProps) => (
@@ -34,6 +38,10 @@ export function ChannelListCont() {
                         <TeamChannelList 
                             {... listProps}
                             type='messaging'
+                            isCreating={isCreating}
+                            setIsCreating={setIsCreating}
+                            setCreateType={setCreateType}
+                            setIsEditing={setIsEditing}
                         />
                     )}
                     Preview={(previewProps) => (

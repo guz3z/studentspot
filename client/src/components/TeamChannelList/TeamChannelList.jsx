@@ -1,7 +1,8 @@
 import React from 'react';
+import { AddChannel } from '../../assets/AddChannel';
 import './teamchannellist.css'
 
-export function TeamChannelList({ children, error = false, loading, type }) {
+export function TeamChannelList({ children, error = false, loading, type, isCreating, setIsCreating, setCreateType, setIsEditing }) {
 
     if(error) {
         return type === 'team' ? (
@@ -28,7 +29,13 @@ export function TeamChannelList({ children, error = false, loading, type }) {
                 <p>
                     { type === 'team' ? 'Channels' : 'Direct Messages' }
                 </p>
-                {/*button to add channel*/}
+                <AddChannel 
+                    isCreating={isCreating}
+                    setIsCreating={setIsCreating}
+                    setCreateType={setCreateType}
+                    setIsEditing={setIsEditing}
+                    type={ type === 'team' ? 'team' : 'messaging '}
+                />
             </div>
             {children}
             
