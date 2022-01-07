@@ -1,13 +1,12 @@
 import React from 'react';
-import { Channel, useChatContext } from 'stream-chat-react';
-import { ChannelInner, CreateChannel, EditChannel, TeamMessage } from '../index'
+import { Channel, MessageTeam } from 'stream-chat-react';
+import { ChannelInner, CreateChannel, EditChannel} from '../index'
 
 import './channelcont.css';
 
 export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditing, createType} ) {
 
-    const { channel } = useChatContext(); //gives us information of current specific channel
-
+    
     if( isCreating ) {
         return (
             <div className='channel-cont-creating'>
@@ -23,19 +22,18 @@ export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditin
         return (
             <div className='channel-cont-editing'>
                 <EditChannel 
-                    setIsEditing={setIsCreating}
+                    setIsEditing={setIsEditing}
                 />
             </div>
         )
     }
 
     const EmptyState = () => (
-        <div className='channel-cont-empty-cont'>
+        <div style={{padding: '10px 0 0 10px'}}>
             <p style={{
-                color: 'red',
-                fontSize: '3rem'
+                marginBottom: '10px'
             }}>This is the beginning of your chat history</p>
-            <p className="channel-empty-second">Send messages, attachments, links, emojis, and more</p>
+            <p>Send messages, attachments, links, emojis, and more</p>
         </div>
     ) 
 
@@ -43,7 +41,7 @@ export function ChannelCont( { isCreating, setIsCreating, isEditing, setIsEditin
         <div className='channel-cont'>
             <Channel
                 EmptyStateIndicator={EmptyState}
-                Message={(messageProps, i ) => <TeamMessage key={i} {...messageProps} />}
+                Message={(messageProps, i ) => <MessageTeam key={i} {...messageProps} />}
             >
                 <ChannelInner setIsEditing={setIsEditing} />
             </Channel>

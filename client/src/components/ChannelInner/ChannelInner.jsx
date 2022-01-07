@@ -39,7 +39,7 @@ export function ChannelInner( { setIsEditing } ) {
                 <Thread />
             </div>
         </GiphyContext.Provider>
-    )
+    );
 };
 
 const TeamChannelHeader = ({ setIsEditing }) => {
